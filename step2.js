@@ -1,10 +1,10 @@
-function getAndPrintHTMLChuncks() {
+function getAndPrintHTML() {
 
   var https = require('https')
 
   var requestOptions = {
     host: 'sytantris.github.io',
-    path: '/http-examples/step1.html'
+    path: '/http-examples/step2.html'
   }
 
 
@@ -12,12 +12,15 @@ function getAndPrintHTMLChuncks() {
 
     response.setEncoding( 'utf8' )
 
+    var output = ''
+
     //Takes in the chunks of data and prints to terminal in chunks
     response.on( 'data', function ( data ) {
-      console.log( data + '\n' )
+      output += data
+      console.log(output)
     })
   })
 
 }
 
-getAndPrintHTMLChuncks()
+getAndPrintHTML()
