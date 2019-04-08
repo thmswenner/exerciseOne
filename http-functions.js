@@ -9,13 +9,8 @@ module.exports = function getHTML (options, callback) {
     var output = ''
 
     response.on('data', function(data) {
-      printHTML(data)
+      callback(data)
     })
   })
-
-  function printHTML (html) {
-  console.log(html);
-  }
-
 };
 
